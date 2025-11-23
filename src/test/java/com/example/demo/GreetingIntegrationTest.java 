@@ -1,0 +1,20 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
+class GreetingIntegrationTest {
+
+    @Autowired
+    GreetingService greetingService;
+
+    @Test
+    void contextLoadsAndServiceWorks() {
+        assertNotNull(greetingService);
+        assertTrue(greetingService.greet("A").contains("Hello"));
+    }
+}
